@@ -13,7 +13,7 @@ This repository contains a rigorous, data-driven time-series analysis and foreca
 ### 1. Historical Temperature Trends (2000 - 2026)
 The framework ingests raw hourly temperatures, converts them from Kelvin to Celsius, and aggregates them into clean daily (`temp_daily`) and monthly (`temp`) resampled aggregate dataframes to capture systemic seasonal behaviors over a 26-year horizon.
 
-![Daily timeseries of Nyeri Temperature](path/to/your/daily_timeseries_plot.png)
+![Daily timeseries of Nyeri Temperature](images/output.png)
 
 ### 2. Time-Series Decomposition & Stationarity Testing
 To determine the optimal differencing parameters required for autoregressive processing, the data was subjected to both **Augmented Dickey-Fuller (ADF)** and **KPSS** tests:
@@ -36,9 +36,11 @@ The project evaluates four distinct modeling paradigms:
 
 ### 2. Holt-Winters Exponential Smoothing
 * **Approach:** Upgraded the smoothing infrastructure to an `ETS(ANA)` structure (Additive Error, No Trend, Additive Seasonality) to capture the cyclical movements of the Nyeri climate.
+  ![Daily timeseries of Nyeri Temperature](images/holtvsautoes.png)
 
 ### 3. Classical ARIMAX vs. Automated `auto_arima` Pipelines
 * **Approach:** Programmatic modeling using automated grid searches to minimize information criteria (AIC/BIC), testing raw `ARIMA(1,1,1)` and `ARIMA(2,1,2)` structures against custom integrated preprocessing pipelines.
+  ![Daily timeseries of Nyeri Temperature](images/arimavsuto.png)
 
 ---
 
