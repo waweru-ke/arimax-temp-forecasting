@@ -31,7 +31,8 @@ A rolling-window validation strategy was applied by partitioning the dataset, re
 The project evaluates four distinct modeling paradigms:
 
 ### 1. Simple Exponential Smoothing (SES) $\rightarrow$ *The Flat Forecast Phenomenon*
-* **The Finding:** When attempting to apply `SimpleExpSmoothing` to the monthly temperature aggregates, the resulting forecasts produced a completely **flat linear projection**. 
+* **The Finding:** When attempting to apply `SimpleExpSmoothing` to the monthly temperature aggregates, the resulting forecasts produced a completely **flat linear projection**.
+  ![Daily timeseries of Nyeri Temperature](images/ses.png)
 * **The Diagnosis:** Because SES possesses no trend or seasonal components (`smoothing_level=1.0`), it computes forecasts as a static weighted average of past levels. This served as a structural baseline proving that classical single-parameter smoothing is completely inadequate for modeling highly oscillatory geographic weather systems.
 
 ### 2. Holt-Winters Exponential Smoothing
